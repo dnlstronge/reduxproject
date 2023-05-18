@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 
-createSlice({
+const uiSlice = createSlice({
     name: "ui",
     initialState: {cartIsVisable: false},
     reducers: {
@@ -12,3 +12,5 @@ createSlice({
         }
     }
 })
+
+export default uiSlice;

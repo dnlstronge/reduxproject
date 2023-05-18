@@ -6,6 +6,7 @@ const CartButton = (props) => {
   const dispatch = useDispatch()
 
   const handleToggleCart = () => {
+    console.log("toggle fired")
     dispatch(uiSliceActions.toggle())
   }
   return (

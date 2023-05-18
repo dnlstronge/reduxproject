@@ -12,5 +12,5 @@ const uiSlice = createSlice({
         }
     }
 })
-
+export const uiSliceActions = uiSlice.actions;
 export default uiSlice;

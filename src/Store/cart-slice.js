@@ -24,7 +24,10 @@ const cartSlice = createSlice({
                 existingItem.totalPrice = existingItem.totalPrice + newItem.price
             }
         },
-        removeItemFromCart(state, action) {},
+        removeItemFromCart(state, action) {
+            const id = action.payload
+            const existingItem = state.items.find(item => item.id === id)
+        },
 
     }
 })

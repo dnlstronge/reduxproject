@@ -11,7 +11,7 @@ const DUMMY_PRODUCTS = [
   {
     id: "p2",
     price: 13.50,
-    title: "A novel approach",
+    title: "A Novel Approach",
     description: "A man goes for a swim and finds a dog"
   }
 ]

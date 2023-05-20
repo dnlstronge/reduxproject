@@ -4,6 +4,10 @@ import classes from './ProductItem.module.css';
 const ProductItem = (props) => {
   const { title, price, description } = props;
 
+  const handleAddToCart = () => {
+    
+  }
+
   return (
     <li className={classes.item}>
       <Card>
@@ -13,7 +17,7 @@ const ProductItem = (props) => {
         </header>
         <p>{description}</p>
         <div className={classes.actions}>
-          <button>Add to Cart</button>
+          <button onClick={handleAddToCart}>Add to Cart</button>
         </div>
       </Card>
     </li>

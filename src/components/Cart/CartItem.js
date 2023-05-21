@@ -3,10 +3,12 @@ import { useDispatch } from 'react-redux';
 import { cartActions } from '../../Store/cart-slice';
 
 const CartItem = (props) => {
-  const { title, quantity, total, price } = props.item;
+  const { title, quantity, total, price, id } = props.item;
   const dispatch = useDispatch()
-  const increment = () => {}
-  const decrement = () => {}
+  const addItemHandler = () => {}
+  const removeItemHandler = () => {
+    dispatch(cartActions.removeItemFromCart())
+  }
 
   return (
     <li className={classes.item}>

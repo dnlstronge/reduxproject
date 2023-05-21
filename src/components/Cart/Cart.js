@@ -15,7 +15,7 @@ const Cart = (props) => {
       {cartItems.map((cartItem) => {return (
         <CartItem
           id={cartItem.id}
-          key={cartItem.id}
+          key={cartItem.id} // issue doing this
           item={{ title: cartItem.name, quantity: cartItem.quantity, total: cartItem.totalPrice, price: cartItem.price }}
         />
       )} )}

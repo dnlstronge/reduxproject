@@ -14,6 +14,7 @@ const CartItem = (props) => {
     }))
   }
 
+  
   const removeItemHandler = () => {
     dispatch(cartActions.removeItemFromCart(id))
   }

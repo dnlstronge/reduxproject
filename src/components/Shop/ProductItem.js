@@ -10,6 +10,8 @@ const ProductItem = (props) => {
   const dispatch = useDispatch()
 
   const handleAddToCart = () => {
+    const newTotalQuantity = cart.totalQuantity +1
+
     dispatch(cartActions.addItemToCart({
       id,
       title,

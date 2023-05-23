@@ -23,13 +23,21 @@ const ProductItem = (props) => {
       )
       updatedItems[existingItemIndex] = updatedItem
     } else {
-      
+      updatedItems.push({
+        id: id,
+        price: price,
+        quantity: 1,
+        totalPrice: price,
+        name: title,
+      })
     }
-    dispatch(cartActions.addItemToCart({
-      id,
-      title,
-      price,
-    }))
+
+    const newCart = {
+      totalQuantity: newTotalQuantity,
+      items: updatedItems
+    }
+
+    dispatch(cartActions.addItemToCart(newCart))
   }
 
   return (

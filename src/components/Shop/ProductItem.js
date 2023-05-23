@@ -11,7 +11,12 @@ const ProductItem = (props) => {
 
   const handleAddToCart = () => {
     const newTotalQuantity = cart.totalQuantity +1
+    const updatedItems = cart.items.slice() // create copy via slice to avoid mutation
+    const existingItem = updatedItems.find((item) => item.id === id)
 
+    if(existingItem) {
+      
+    }
     dispatch(cartActions.addItemToCart({
       id,
       title,

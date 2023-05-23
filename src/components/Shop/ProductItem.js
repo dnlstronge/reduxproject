@@ -16,6 +16,8 @@ const ProductItem = (props) => {
 
     if(existingItem) {
       const updatedItem = {...existingItem} // new object plus copy existing properties
+      updatedItem.quantity++
+      updatedItem.price = updatedItem.price + price
     }
     dispatch(cartActions.addItemToCart({
       id,

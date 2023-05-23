@@ -15,7 +15,7 @@ const ProductItem = (props) => {
     const existingItem = updatedItems.find((item) => item.id === id)
 
     if(existingItem) {
-      
+      const updatedItem = {...existingItem} // new object plus copy existing properties
     }
     dispatch(cartActions.addItemToCart({
       id,

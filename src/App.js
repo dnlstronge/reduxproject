@@ -17,14 +17,26 @@ function App() {
   useEffect(() => {
     
     const sendCartData = async() => {
-
+      dispatch(uiSliceActions.showNotification({
+        status: "PENDING",
+        title: "Sending...",
+        message: "Sending cart data"
+      }))
      const response = await fetch("https://connectdb-1efa3-default-rtdb.europe-west1.firebasedatabase.app/cart.json", {
         method: "PUT", 
         body: JSON.stringify(cart)  })
         if(!response.ok) {
-          throw new Error("Sending cart data failed")
+          dispatch(uiSliceActions.showNotification({
+            status: "error",
+            title: "error!",
+            message: "Error: sending cart data failed"
+          }))
         }
-        const responseData = await response.json()
+       dispatch(uiSliceActions.showNotification({
+        status: "success",
+        title: "success!",
+        message: "Send cart data successful"
+       }))
     }
  
   }, [cart])

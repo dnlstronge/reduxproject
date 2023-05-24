@@ -9,6 +9,9 @@ function App() {
   const showCart = useSelector((state) => state.ui.cartIsVisible)
   const cart = useSelector((state) => state.cart)
   
+
+  // re-executes whenenever cart changes.
+  
   useEffect(() => {
     fetch("https://connectdb-1efa3-default-rtdb.europe-west1.firebasedatabase.app/cart.json", {
        method: "PUT", body: JSON.stringify(cart)  })

@@ -26,11 +26,7 @@ function App() {
         method: "PUT", 
         body: JSON.stringify(cart)  })
         if(!response.ok) {
-          dispatch(uiSliceActions.showNotification({
-            status: "error",
-            title: "error!",
-            message: "Error: sending cart data failed"
-          }))
+         throw new Error("Error: sending cart data failed")
         }
        dispatch(uiSliceActions.showNotification({
         status: "success",
@@ -38,6 +34,14 @@ function App() {
         message: "Send cart data successful"
        }))
     }
+
+    sendCartData().catch((error) => {
+      dispatch(uiSliceActions.showNotification({
+        status: "error",
+        title: "error!",
+        message: "Error: sending cart data failed"
+      }))
+    })
  
   }, [cart])
 

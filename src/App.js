@@ -45,6 +45,8 @@ function App() {
       );
     };
 
+
+    // blocks vart data from being sent on first render/intitialisation
     if (isInitial) {
       isInitial = false;
       return;

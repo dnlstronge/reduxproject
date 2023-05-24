@@ -10,34 +10,7 @@ const ProductItem = (props) => {
   const dispatch = useDispatch()
 
   const handleAddToCart = () => {
-    const newTotalQuantity = cart.totalQuantity +1
-    const updatedItems = cart.items.slice() // create copy via slice to avoid mutation
-    const existingItem = updatedItems.find((item) => item.id === id)
-
-    if(existingItem) {
-      const updatedItem = {...existingItem} // new object plus copy existing properties
-      updatedItem.quantity++
-      updatedItem.price = updatedItem.price + price
-      const existingItemIndex = updatedItems.findIndex(
-        (item) => item.id === id
-      )
-      updatedItems[existingItemIndex] = updatedItem
-    } else {
-      updatedItems.push({
-        id: id,
-        price: price,
-        quantity: 1,
-        totalPrice: price,
-        name: title,
-      })
-    }
-
-    const newCart = {
-      totalQuantity: newTotalQuantity,
-      items: updatedItems
-    }
-
-    dispatch(cartActions.addItemToCart(newCart))
+    
   }
 
   return (

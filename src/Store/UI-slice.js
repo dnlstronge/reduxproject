@@ -9,6 +9,13 @@ const uiSlice = createSlice({
     reducers: {
         toggle(state) {
             state.cartIsVisible = !state.cartIsVisible
+        },
+        showNotification(state, action) {
+            state.notifcation = {
+                status: action.payload.status,
+                title: action.payload.title,
+                message: action.payload.message
+            }
         }
     }
 })

@@ -10,7 +10,8 @@ function App() {
   const cart = useSelector((state) => state.cart)
   
   useEffect(() => {
-    fetch("https://connectdb-1efa3-default-rtdb.europe-west1.firebasedatabase.app/cart.json")
+    fetch("https://connectdb-1efa3-default-rtdb.europe-west1.firebasedatabase.app/cart.json", {
+       method: "PUT", body: JSON.stringify(cart)  })
     // send post
   }, [cart])
 

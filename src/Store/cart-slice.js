@@ -66,14 +66,28 @@ const sendCartData = (cart) => {
               }
           };
 
-          
-          dispatch(
-            uiSliceActions.showNotification({
-              status: 'success',
-              title: 'Success!',
-              message: 'Sent cart data successfully!',
-            })
-          );
+
+          try {
+            await sendRequest()
+            dispatch(
+                uiSliceActions.showNotification({
+                  status: 'success',
+                  title: 'Success!',
+                  message: 'Sent cart data successfully!',
+                })
+              );
+          } catch (error) {
+            dispatch(
+                uiSliceActions.showNotification({
+                  status: 'error',
+                  title: 'Error!',
+                  message: 'Sending cart data failed!',
+                })
+              );
+          }
+         
+
+         
     }
     
 }

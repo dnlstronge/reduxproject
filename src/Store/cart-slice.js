@@ -52,17 +52,21 @@ const sendCartData = (cart) => {
               message: 'Sending cart data!',
             })
           );
-          const response = await fetch(
-            'https://connectdb-1efa3-default-rtdb.europe-west1.firebasedatabase.app/cart.json',
-            {
-              method: 'PUT',
-              body: JSON.stringify(cart),
-            }
-          );
-    
-          if (!response.ok) {
-            throw new Error('Sending cart data failed.');
-          }
+          const sendRequest = async() => {
+            const response = await fetch(
+                'https://connectdb-1efa3-default-rtdb.europe-west1.firebasedatabase.app/cart.json',
+                {
+                  method: 'PUT',
+                  body: JSON.stringify(cart),
+                }
+              );
+        
+              if (!response.ok) {
+                throw new Error('Sending cart data failed.');
+              }
+          };
+
+          
           dispatch(
             uiSliceActions.showNotification({
               status: 'success',

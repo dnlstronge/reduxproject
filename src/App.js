@@ -16,28 +16,7 @@ function App() {
   const notification = useSelector((state) => state.ui.notification);
 
   useEffect(() => {
-    const sendCartData = async () => {
-      
-
-     
-    };
-
-
-    // blocks vart data from being sent on first render/intitialisation
-    if (isInitial) {
-      isInitial = false;
-      return;
-    }
-
-    sendCartData().catch((error) => {
-      dispatch(
-        uiSliceActions.showNotification({
-          status: 'error',
-          title: 'Error!',
-          message: 'Sending cart data failed!',
-        })
-      );
-    });
+    
   }, [cart, dispatch]);
 
   return (

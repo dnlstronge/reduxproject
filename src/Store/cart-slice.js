@@ -63,7 +63,15 @@ const sendCartData = (cart) => {
           if (!response.ok) {
             throw new Error('Sending cart data failed.');
           }
+          dispatch(
+            uiSliceActions.showNotification({
+              status: 'success',
+              title: 'Success!',
+              message: 'Sent cart data successfully!',
+            })
+          );
     }
+    
 }
 
 export const cartActions = cartSlice.actions;

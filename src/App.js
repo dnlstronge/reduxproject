@@ -19,13 +19,7 @@ function App() {
     const sendCartData = async () => {
       
 
-      dispatch(
-        uiSliceActions.showNotification({
-          status: 'success',
-          title: 'Success!',
-          message: 'Sent cart data successfully!',
-        })
-      );
+     
     };
 
 

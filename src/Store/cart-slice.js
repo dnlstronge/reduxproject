@@ -38,7 +38,13 @@ const cartSlice = createSlice({
         },
 
     }
+
+
 })
+
+const sendCartData = (cartData) => {
+
+}
 
 export const cartActions = cartSlice.actions;
 export default cartSlice;

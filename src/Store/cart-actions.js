@@ -1,5 +1,4 @@
 import { uiSliceActions } from "./UI-slice";
-import { useDispatch } from "react-redux";
 import { cartActions } from "./cart-slice";
 
 export const fetchCartData = () => {

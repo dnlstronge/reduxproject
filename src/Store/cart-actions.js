@@ -1,5 +1,6 @@
 import { uiSliceActions } from "./UI-slice";
 import { useDispatch } from "react-redux";
+import { cartActions } from "./cart-slice";
 
 
 export const fetchCartData = () => {
@@ -13,7 +14,8 @@ export const fetchCartData = () => {
            return data;
         }
         try {
-            fetchData()
+            const cartData = await fetchData()
+            dispatch(cartActions.replaceCart(cartData))
         } catch (error) {
             dispatch(
                 uiSliceActions.showNotification({
@@ -23,6 +25,7 @@ export const fetchCartData = () => {
                 })
               );
         }
+        //
      }
 }
 

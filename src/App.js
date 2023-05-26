@@ -19,7 +19,7 @@ function App() {
       isInitial = false;
       return;
     }
-      sendCartData()
+      dispatch(sendCartData(cart))
   }, [cart, dispatch]);
 
   return (

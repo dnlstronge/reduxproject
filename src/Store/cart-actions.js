@@ -2,7 +2,6 @@ import { uiSliceActions } from "./UI-slice";
 import { useDispatch } from "react-redux";
 import { cartActions } from "./cart-slice";
 
-
 export const fetchCartData = () => {
     return async (dispatch) => {
            const fetchData = async() => {
@@ -25,7 +24,6 @@ export const fetchCartData = () => {
                 })
               );
         }
-        //
      }
 }
 
@@ -52,7 +50,7 @@ export const sendCartData = (cart) => {
                 throw new Error('Sending cart data failed.');
               }
           };
-          
+
           try {
             await sendRequest()
             dispatch(

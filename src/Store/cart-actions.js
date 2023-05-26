@@ -10,6 +10,18 @@ export const fetchCartData = () => {
             throw new Error("unable to fetch cart data")
            }
            const data = await response.json()
+           return data;
+        }
+        try {
+            fetchData()
+        } catch (error) {
+            dispatch(
+                uiSliceActions.showNotification({
+                  status: 'error',
+                  title: 'Error!',
+                  message: 'Sending cart data failed!',
+                })
+              );
         }
      }
 }

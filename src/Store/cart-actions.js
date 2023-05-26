@@ -6,6 +6,10 @@ export const fetchCartData = () => {
     return async (dispatch) => {
            const fetchData = async() => {
            const response =  await fetch("https://connectdb-1efa3-default-rtdb.europe-west1.firebasedatabase.app/cart.json")
+           if(!response.ok) {
+            throw new Error("unable to fetch cart data")
+           }
+           const data = await response.json()
         }
      }
 }

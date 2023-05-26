@@ -1,5 +1,9 @@
 import { uiSliceActions } from "./UI-slice";
 
+export const fetchCartData = () => {
+    
+}
+
 
 export const sendCartData = (cart) => {
     return async (dispatch) => {

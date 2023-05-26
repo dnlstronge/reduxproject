@@ -1,7 +1,13 @@
 import { uiSliceActions } from "./UI-slice";
+import { useDispatch } from "react-redux";
+
 
 export const fetchCartData = () => {
-    
+    return async (dispatch) => {
+           const fetchData = async() => {
+           const response =  await fetch("https://connectdb-1efa3-default-rtdb.europe-west1.firebasedatabase.app/cart.json")
+        }
+     }
 }
 
 

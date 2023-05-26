@@ -23,8 +23,6 @@ export const sendCartData = (cart) => {
                 throw new Error('Sending cart data failed.');
               }
           };
-
-
           try {
             await sendRequest()
             dispatch(
@@ -43,9 +41,5 @@ export const sendCartData = (cart) => {
                 })
               );
           }
-         
-
-         
-    }
-    
+    }  
 }
